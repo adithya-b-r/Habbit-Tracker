@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export interface Habit{
   id: string;
@@ -20,7 +20,7 @@ const habitSlice = createSlice({
   name: "habits",
   initialState,
   reducers: {
-    addHabit: () => {},
+    addHabit: (state, action:PayloadAction<{name:String, frequency: "daily" | "weekly"}>) => {},
   }
 })
 
