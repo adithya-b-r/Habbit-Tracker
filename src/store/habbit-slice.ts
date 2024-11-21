@@ -20,7 +20,7 @@ const habitSlice = createSlice({
   name: "habits",
   initialState,
   reducers: {
-    addHabit: (state, action:PayloadAction<{name:String, frequency: "daily" | "weekly"}>) => {},
+    addHabit: (state, action:PayloadAction<{name:String, frequency: "daily" | "weekly"}>) => {}
   }
 })
 
