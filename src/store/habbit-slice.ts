@@ -10,11 +10,39 @@ export interface Habit {
 
 interface HabitState {
   habits: Habit[];
+  isLoading: boolean;
+  error: string | null;
 }
 
 const initialState: HabitState = {
   habits: [],
+  isLoading: false,
+  error: null,
 }
+
+const fetchHabits = createAsyncThunk("habits/fetchHabits", async () => {
+  // Simulating an API call
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
+  const mockHabits: Habbit[] = [
+    {
+      id: "1",
+      name: "Read",
+      frequency: "Daily",
+      completedDates: [],
+      createdAt: new Date().toISOString(),
+    },
+    {
+      id: "2",
+      name: "Exercise",
+      frequency: "Daily",
+      completedDates: [],
+      createdAt: new Date().toISOString(),
+    },
+  ]
+
+  return mockHabits;
+})
 
 const habitSlice = createSlice({
   name: "habits",
@@ -46,10 +74,10 @@ const habitSlice = createSlice({
       }
     },
 
-    deleteHabit: (state, action: PayloadAction<{id: string}>) => {
+    deleteHabit: (state, action: PayloadAction<{ id: string }>) => {
       const habit = state.habits.find((h) => h.id === action.payload.id)
 
-      if(habit){
+      if (habit) {
         state.habits = state.habits.filter((h) => h.id !== action.payload.id);
       }
     }
