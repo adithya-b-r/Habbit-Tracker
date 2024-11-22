@@ -5,19 +5,24 @@ import { AppDispatch } from '../store/store';
 import { addHabit } from '../store/habbit-slice';
 
 const AddHabitForm = () => {
-  const [name, setName] = useState<String>("");
+  const [name, setName] = useState<string>("");
   const [frequency, setFrequency] = useState<"daily" | "weekly">("daily");
   const dispatch = useDispatch<AppDispatch>();
 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    dispatch(
-      addHabit({
-        name,
-        frequecny,
-      });
-    )
+    
+    if(name.trim()){
+      dispatch(
+        addHabit({
+          name,
+          frequency
+        })
+      )
+
+      setName("");
+    }
   }
 
 return (
