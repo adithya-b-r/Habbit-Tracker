@@ -20,7 +20,7 @@ const initialState: HabitState = {
   error: null,
 }
 
-const fetchHabits = createAsyncThunk("habits/fetchHabits", async () => {
+export const fetchHabits = createAsyncThunk("habits/fetchHabits", async () => {
   // Simulating an API call
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
