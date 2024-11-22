@@ -4,7 +4,7 @@ import habitsReducer from "./habbit-slice";
 const store = configureStore({
   reducer: {
     habits: habitsReducer,
-  }
+  },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
