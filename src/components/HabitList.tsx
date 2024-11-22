@@ -15,7 +15,7 @@ const HabitList: React.FC = () => {
         return (
           <Paper key={habit.id} elevation={2} sx={{ p: 2 }}>
             <Grid container alignItems="center">
-              <Grid>
+              <Grid xs={12} md={6}>
                 <Typography variant="h6">{habit.name}</Typography>
                 <Typography variant="body2" color="textSecondary" sx={{ textTransform: "capitalize" }}>{habit.frequency}</Typography>
               </Grid>
@@ -25,9 +25,8 @@ const HabitList: React.FC = () => {
                     color={
                       habit.completedDates.includes(today) ? "success" : "primary"
                     }
-                    startIcon={<CheckCircleIcon />}
-                  >
-                    Mark Complete
+                    startIcon={<CheckCircleIcon />}>
+                    {habit.completedDates.includes(today) ? "Completed" : "Mark complete"}
                   </Button>
 
                   <Button variant="outlined" color="error" startIcon={<DeleteIcon />}>
