@@ -42,30 +42,6 @@
 
 ---
 
-## Installation
-
-1. Clone this repository:
-   ```bash
-   git clone https://github.com/yourusername/habit-tracker.git
-   ```
-
-2. Navigate to the project directory:
-   ```bash
-   cd habit-tracker
-   ```
-
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-4. Run the application:
-   ```bash
-   npm start
-   ```
-
----
-
 ## Screenshots
 
 ### 1. Add Habit Form
