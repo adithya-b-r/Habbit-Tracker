@@ -22,7 +22,7 @@ const initialState: HabitState = {
 
 export const fetchHabits = createAsyncThunk("habits/fetchHabits", async () => {
   // Simulating an API call
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 5000));
 
   const mockHabits: Habit[] = [
     {
