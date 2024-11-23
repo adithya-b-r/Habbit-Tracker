@@ -86,11 +86,11 @@
 
 You can view the live demo of the app on Vercel here:
 
-[Live Demo on Vercel](https://your-vercel-deployment-link.com)
+[Live Demo on Vercel](habbit-tracker-beta.vercel.app)
 
 ---
 
-## Redux Code (For Future Reference)
+## Redux Code (For Easy Reference)
 
 ### 1. **`store.ts`** (Redux Store Configuration)
 
