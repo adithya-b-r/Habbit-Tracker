@@ -11,9 +11,26 @@ function App() {
   return (
     <Provider store={store}>
       <Container maxWidth="md">
-        <Typography component="h1" variant="h2" align="center">
-          Habbit Tracker
-        </Typography>
+        <Typography 
+        component="h1"
+        variant="h2" 
+        align="center" 
+        color='primary'
+        sx={{
+          WebkitTextStroke: "1px royalblue",
+          fontWeight: "bold",
+          textTransform: "uppercase",
+          letterSpacing: "0.1rem",
+          marginY: "1.5rem",
+          fontSize: {
+            xs: "2rem", // Small screens
+            sm: "2.5rem", // Medium screens
+            md: "3rem",   // Larger screens
+          },
+        }}
+      >
+        Habit Tracker
+      </Typography>
         <AddHabitForm/>
         <HabitList/>
         <HabitStats/>

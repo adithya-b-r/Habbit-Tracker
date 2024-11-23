@@ -35,20 +35,33 @@ const HabitList: React.FC = () => {
         return (
           <Paper key={habit.id} elevation={2} sx={{ p: 2 }}>
             <Grid container alignItems="center">
-              <Grid xs={12} md={6}>
+              <Grid sx={(theme) => ({
+                [theme.breakpoints.down('sm')]: {
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  width: '100%',
+                },
+              })} xs={12} md={6}>
                 <Typography variant="h6">{habit.name}</Typography>
                 <Typography variant="body2" color="textSecondary" sx={{ textTransform: "capitalize" }}>{habit.frequency}</Typography>
               </Grid>
               <Grid xs={12} md={6}>
-                <Box sx={{ display: "flex", justifyContent: "flex-end", gap: 1 }}>
-                  <Button variant="outlined"
-                    color={
-                      habit.completedDates.includes(today) ? "success" : "primary"
-                    }
+                <Box marginTop="12px" sx={{ display: "flex", justifyContent: "flex-end", gap: 1 }}>
+                  <Button
+                    variant="outlined"
+                    color={habit.completedDates.includes(today) ? "success" : "primary"}
                     startIcon={<CheckCircleIcon />}
                     onClick={() => {
-                      dispatch(toggleHabit({ id: habit.id, date: today }))
+                      dispatch(toggleHabit({ id: habit.id, date: today }));
                     }}
+                    sx={(theme) => ({
+                      [theme.breakpoints.down('sm')]: {
+                        fontSize: '.9rem', // Example: Smaller text for small screens
+                        padding: '8px 4px', // Adjust padding
+                        width: '60%'
+                      },
+                    })}
                   >
                     {habit.completedDates.includes(today) ? "Completed" : "Mark complete"}
                   </Button>
@@ -72,7 +85,7 @@ const HabitList: React.FC = () => {
               <LinearProgress
                 variant='determinate'
                 value={(getStreak(habit) / 30) * 100}
-                sx={{mt: 1}}
+                sx={{ mt: 1 }}
               >
 
               </LinearProgress>

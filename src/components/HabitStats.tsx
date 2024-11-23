@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppDispatch, RootState } from '../store/store';
-import { fetchHabits } from '../store/habbit-slice';
+import { fetchHabits, Habit } from '../store/habbit-slice';
 import { LinearProgress, Paper, Typography } from '@mui/material';
 
 const HabitStats: React.FC = () => {
